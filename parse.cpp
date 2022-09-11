@@ -22,16 +22,23 @@ int main() {
   }
 
   int counter = 0;
+  bool is_space = true;
   string str;
 
   for (int i = 0; i < code.size(); i++) {
     for (int j = 0; j < code[i].length(); j++) {
       if (code[i][j] != ';' && code[i][j] != '{') {
-        str += code[i][j];
+        if (is_space && code[i][j] == ' ')
+          continue;
+        else {
+          str += code[i][j];
+          is_space = false;
+        }
       } else {
         cout << counter++ << ": " << str << endl;
         code_out.push_back(str);
         str.clear();
+        is_space = true;
       }
     }
   }
@@ -43,6 +50,7 @@ int main() {
 
   for (int i = 2; i < code_out.size(); i++) {
     out << "op" << i - 2 << "=>operation: " << code_out[i] << endl;
+    // add support to if, while , do-while, for
   }
 
   out << endl;
