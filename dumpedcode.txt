@@ -1,0 +1,10 @@
+s=>start: Start
+e=>end: End
+op0=>operation:     cout << "Hello, This is a test case" << endl
+op1=>operation:     int sum = 0
+op2=>operation:     cout << sum << endl
+op3=>operation:     sum++
+op4=>operation:     cout << sum << endl
+op5=>operation:     return 0
+
+s->op0->op1->op2->op3->op4->op5->e
