@@ -1,10 +1,10 @@
 s=>start: Start
 e=>end: End
-op0=>operation: cout << "Hello, This is a test case" << endl
-op1=>operation: int sum = 0
-op2=>operation: cout << sum << endl
-op3=>operation: sum++
-op4=>operation: cout << sum << endl
-op5=>operation: return 0
+op0=>operation: bool a = true
+op1=>operation: if (a) 
+op2=>operation: cout << "a equals to 1" << endl
+op3=>operation: } else 
+op4=>operation: cout << "a doesn't equal to 1" << endl
+op5=>operation: }  return 0
 
 s->op0->op1->op2->op3->op4->op5->e

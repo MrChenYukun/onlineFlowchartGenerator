@@ -9,7 +9,7 @@ int main() {
   char buffer[256];
   vector<string> code;
   vector<string> code_out;
-  ifstream in("testcode\\test1.cpp");
+  ifstream in("testcode\\testif.cpp");
   ofstream out("dumpedcode.txt");
 
   if (!in.is_open()) {
@@ -28,7 +28,7 @@ int main() {
   for (int i = 0; i < code.size(); i++) {
     for (int j = 0; j < code[i].length(); j++) {
       if (code[i][j] != ';' && code[i][j] != '{') {
-        if (is_space && code[i][j] == ' ')
+        if (is_space && (code[i][j] == ' ' || code[i][j] == '\n'))
           continue;
         else {
           str += code[i][j];
@@ -50,7 +50,7 @@ int main() {
 
   for (int i = 2; i < code_out.size(); i++) {
     out << "op" << i - 2 << "=>operation: " << code_out[i] << endl;
-    // add support to if, while , do-while, for
+    // add support to if,if-else, while , do-while, for
   }
 
   out << endl;
